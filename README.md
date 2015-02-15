@@ -3,6 +3,8 @@ Wordpress Corcel
 
 *Corcel is under development, but it's working :D*
 
+Forked from https://github.com/jgrossi/corcel
+
 --
 
 Corcel is a class collection created to retrieve Wordpress database data using a better syntax. It uses the Eloquent ORM developed for the Laravel Framework, but you can use Corcel in any type of PHP project.
@@ -14,7 +16,7 @@ This way you can use Wordpress as back-end, to insert posts, custom types, etc, 
 To install Corcel just create a `composer.json` file and add:
 
     "require": {
-        "jgrossi/corcel": "dev-master"
+        "mrofi/corcel": "dev-master"
     },
 
 After that run `composer install` and wait.
@@ -25,22 +27,24 @@ First you must include the Composer `autoload` file.
 
     require __DIR__ . '/vendor/autoload.php';
 
-Now you must set your Wordpress database params:
+Create new database connection on your confif/database file, name it as 'wp'
+simple override from your existing connection, like this
 
-    $params = array(
-        'database'  => 'database_name',
-        'username'  => 'username',
-        'password'  => 'pa$$word',
-    );
-    Corcel\Database::connect($params);
+        'mysql' => $_mysql_db = array(
+        
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'database_name',
+            'username'  => 'root',
+            'password'  => 'password',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ),
 
-You can specify all Eloquent params, but some are default (but you can override them).
+        'wp' => array_merge($_mysql_db, ['prefix' => 'wp_']),
 
-    'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
+If you use different connection name just replace the $connection value in this package src/Corcel/CorcelEloqeunt.php file with your own name based what you write on config/database file.
 
 ### Posts
 

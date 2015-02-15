@@ -4,8 +4,8 @@ namespace Corcel;
 
 use \Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Term extends Eloquent
+class Term extends CorcelEloquent
 {
-    protected $table = 'wp_terms';
+    protected $table = 'terms';
     protected $primaryKey = 'term_id';
 }

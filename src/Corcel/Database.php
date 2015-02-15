@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 /**
  * Corcel\Database
- * 
+ *
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 
@@ -15,25 +15,18 @@ class Database
     /**
      * Base params. Wordpress use by default MySQL databases and more.
      */
-    static protected $baseParams = array(
-        'driver'    => 'mysql',
-        'host'      => 'localhost',
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix'    => '',
-    );
 
     /**
      * Connect to the Wordpress database
-     * 
+     *
      * @param array $params
      */
-    public static function connect(array $params)
+    public static function connect($params = ['prefix' => 'wp_'])
     {
         $capsule = new Capsule;
-        $params = array_merge(static::$baseParams, $params);
+        $params = array_merge(\Config::get('database.connections.mysql'), $params);
         $capsule->addConnection($params);
-        $capsule->bootEloquent();        
+        $capsule->bootEloquent();
     }
 }
 

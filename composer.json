@@ -1,8 +1,8 @@
 {
-    "name": "jgrossi/corcel",
-    "replace": { "juniorgrossi/corcel": "self.version" },
+    "name": "mrofi/corcel",
+    "replace": { "mrofi/corcel": "self.version" },
     "description": "Wrappers to collect data from Wordpress databases",
-    "homepage": "http://github.com/jgrossi/corcel",
+    "homepage": "http://github.com/mrofi/corcel",
     "license": "MIT",
     "authors": [
         {
