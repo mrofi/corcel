@@ -21,13 +21,8 @@ See this article http://grossi.io/2014/working-with-laravel-4-and-wordpress-toge
 
 ## Installation
 
-To install Corcel just create a `composer.json` file and add:
+To install Corcel just clone this repo to your project
 
-    "require": {
-        "jgrossi/corcel": "dev-master"
-    },
-
-After that run `composer install` and wait.
 
 ## Usage
 
