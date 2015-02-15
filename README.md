@@ -1,5 +1,7 @@
-Wordpress Corcel
-================
+Wordpress Corcel for Laravel
+============================
+
+Credit to Junior Grossi for This Great Work.
 
 *Corcel is under development, but it's working :D*
 
@@ -11,12 +13,18 @@ Corcel is a class collection created to retrieve Wordpress database data using a
 
 This way you can use Wordpress as back-end, to insert posts, custom types, etc, and you can use what you want in front-end, like Silex, Slim Framework, Laravel, Zend, or even pure PHP (why not?).
 
+## Pre-Installation
+
+You have to install laravel first and then install wordpress. 
+
+See this article http://grossi.io/2014/working-with-laravel-4-and-wordpress-together/
+
 ## Installation
 
 To install Corcel just create a `composer.json` file and add:
 
     "require": {
-        "mrofi/corcel": "dev-master"
+        "jgrossi/corcel": "dev-master"
     },
 
 After that run `composer install` and wait.
